@@ -1,0 +1,3 @@
+pip install misaka
+python3 setup.py install
+pip install django-braces 
