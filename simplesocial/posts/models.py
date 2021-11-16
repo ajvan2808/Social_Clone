@@ -7,9 +7,9 @@ import misaka
 
 from groups.models import Group
 
-# POSTS MODELS.PY.
 from django.contrib.auth import get_user_model
 User = get_user_model()
+
 
 class Post(models.Model):
 	user = models.ForeignKey(User, related_name='posts')
