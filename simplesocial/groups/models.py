@@ -8,7 +8,7 @@ or hyphens. And basically the idea behind that is if you have a string that has 
 that as part of the URL, it's going to be able to lowercase and add dashes instead of spaces.
 ''' 
 
-import misaka as m  # allow us to likned and embeded markdown text
+# import misaka   # allow us to likned and embeded markdown text
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -33,18 +33,20 @@ class Group(models.Model):
 
 	def save(self, *args, **kwargs):
 		self.slug = slugify(self.name)
-		self.description_html = m.html(self.description)
+		# self.description_html = misaka.html(self.description)
+		self.description_html = self.description
 		super().save(*args, **kwargs)
 
 	def get_absolute_url(self):
-		return reverse('group:single', kwargs={'slug': self.slug})
+		return reverse('groups:single', kwargs={'slug': self.slug})
 
 	class Meta():
 		ordering = ['name']
 
+
 class GroupMember(models.Model):
-	group = models.ForeignKey(Group, related_name='memeberships')
-	user = models.ForeignKey(User, related_name='user_groups')
+	group = models.ForeignKey(Group, related_name='memeberships', on_delete=models.CASCADE)
+	user = models.ForeignKey(User, related_name='user_groups', on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.user.username

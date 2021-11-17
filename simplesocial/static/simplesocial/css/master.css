@@ -1,0 +1,15 @@
+#btn-delete-post {
+	margin-top: 20px;
+}
+
+.media-footer {
+	float: right;
+}
+
+.confirm-delete-btn {
+	text-align: right;
+}
+
+.confirm-delete-btn .btn {
+	margin-right: 10px;
+}

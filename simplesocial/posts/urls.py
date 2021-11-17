@@ -1,6 +1,6 @@
 from django.urls import path
+from groups.views import CreateGroup
 
-from simplesocial.groups.views import CreateGroup
 from . import views
 
 app_name = 'posts'
