@@ -1,3 +1,10 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	background-color: black;
+	color:white;
+}
+
 #btn-delete-post {
 	margin-top: 20px;
 }
@@ -12,4 +19,16 @@
 
 .confirm-delete-btn .btn {
 	margin-right: 10px;
+}
+
+.group-welcome {
+	margin-top: 30px;
+}
+
+#navbar {
+	margin-bottom: 50px;
+}
+
+.col-md-8 {
+	margin-top: 60px;
 }

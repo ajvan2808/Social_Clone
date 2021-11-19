@@ -1,15 +1,14 @@
 {% extends 'posts/post_base.html' %}
 
 {% block prepost %}
-	<div class="col-md-4">
-		<h3> @ {{ post_user.username }} </h3>
+	<div>
+		<h4> <i class="bi bi-house-door-fill"></i> {{ post_user.username }} </h4>
 	</div>
 {% endblock %}
 
 
-
 {% block post_content %}
-	<div class="col-md-8">
+	<div class="col-md-8" style="font-size: 1em;">
 		{% for post in post_list %}
 			{% include 'posts/_post.html' %}
 		{% endfor %}

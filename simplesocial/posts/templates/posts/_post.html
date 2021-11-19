@@ -1,5 +1,8 @@
 <div class="media">
-	<h4 class="mr-5"><a href="{% url 'posts:for_user' username=post.user.username %}">{{ post.user.username }}</a></h4>
+	<h4 class="mr-5"><a href="{% url 'posts:for_user' username=post.user.username %}">
+		<i class="bi bi-person-circle"></i>
+		{{ post.user.username }}</a>
+	</h4>
 
 	<div class="media-body">
 		<h5>{{ post.message_html|safe }}</h5>
